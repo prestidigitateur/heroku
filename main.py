@@ -36,16 +36,15 @@ class VergeNet:
             self.posts.append(Post(author[n], titles[n+1], links[n+1], pub[n], content[n]))
 
 
-n = VergeNet()
-n.fetch()
-ret_string=""
-for post in n.posts:
-    ret_string+=f'<div><p>{post.author} {post.published}</p><a href="{post.link}"><h1>{post.title}</h1></a><p>{post.content}</p></div>'
-
 app = Flask(__name__)
 
 @app.route('/')
 def hi():
+    n = VergeNet()
+    n.fetch()
+    ret_string = ""
+    for post in n.posts:
+        ret_string += f'<div><p>{post.author} {post.published}</p><h1>{post.title}</h1><p>{post.content}</p></div>'
     return(ret_string)
 
 if __name__=="__main__":
