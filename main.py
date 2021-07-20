@@ -37,7 +37,7 @@ n = VergeNet()
 n.fetch()
 ret_string=""
 for post in n.posts:
-    ret_string+=f'<div><p>{post.author}</p><h1>{post.title}</h1><a href="{post.link}">Link</a></div>'
+    ret_string+=f'<div><p>{post.author}</p><p>{post.published}</p><h1>{post.title}</h1><a href="{post.link}">Link</a></div>'
 
 app = Flask(__name__)
 
