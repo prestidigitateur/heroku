@@ -37,7 +37,7 @@ n = VergeNet()
 n.fetch()
 ret_string=""
 for post in n.posts:
-    ret_string+=post.title+"\n"
+    ret_string+=f"<div><h1>{post.title}</h1></div>"
 
 app = Flask(__name__)
 
